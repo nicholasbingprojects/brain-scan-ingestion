@@ -1,0 +1,14 @@
+# Python / Virtual Environment
+.venv/
+__pycache__/
+*.pyc
+
+# Local DuckDB Staging Files
+*.duckdb
+*.duckdb.wal
+
+# Nextflow working directories and reports
+.nextflow/
+results/
+work/
+.nextflow.log*

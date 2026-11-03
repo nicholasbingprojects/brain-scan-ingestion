@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # brain-scan-ingestion
 
 A high-throughput ingestion pipeline designed to ingest, validate, anonymize, and store neuroimaging data (DICOM and NIfTI formats) for research and clinical analytics.
@@ -31,3 +32,6 @@ brain-scan-ingestion/
 ├── Dockerfile          # Containerization setup
 └── requirements.txt    # Python dependencies
 ```
+=======
+
+>>>>>>> 745c6b49060686dc150c0c8fb6ce51f0eea1937d

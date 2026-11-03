@@ -1,26 +1,25 @@
+# Brain Scan Ingestion
+
 A high-throughput ingestion pipeline designed to ingest, validate, anonymize, and store neuroimaging data (DICOM and NIfTI formats) for research and clinical analytics.
 
-🚀 Key Features
-Automated Ingestion: Watches cloud storage buckets (AWS S3 / GCS) or local endpoints for incoming neuroimaging archives.
+## 🚀 Key Features
 
-DICOM Anonymization: Strips Patient Health Information (PHI) compliant with HIPAA and GDPR guidelines while preserving essential anatomical metadata.
+- **Automated Ingestion:** Watches cloud storage buckets (AWS S3 / GCS) or local endpoints for incoming neuroimaging archives.
+- **DICOM Anonymization:** Strips Patient Health Information (PHI) compliant with HIPAA and GDPR guidelines while preserving essential anatomical metadata.
+- **Format Conversion:** Automatically converts raw DICOM sequences into analysis-ready NIfTI (`.nii.gz`) formats using tools like `dcm2niix`.
+- **Quality Control & Validation:** Verifies file integrity, checks scan orientation, and ensures mandatory headers (e.g., TR, TE, voxel dimensions) are present.
+- **Metadata Extraction:** Extracts key DICOM tags and stores them in a structured PostgreSQL database for fast querying.
 
-Format Conversion: Automatically converts raw DICOM sequences into analysis-ready NIfTI (.nii.gz) formats using tools like dcm2niix.
+## 🛠️ Tech Stack
 
-Quality Control & Validation: Verifies file integrity, checks scan orientation, and ensures mandatory headers (e.g., TR, TE, voxel dimensions) are present.
+- **Language:** Python 3.10+
+- **Imaging Libraries:** pydicom, Nibabel, dcm2niix
+- **Storage/Database:** PostgreSQL, AWS S3 / Google Cloud Storage
+- **Orchestration:** Docker / Kubernetes / Apache Airflow
 
-Metadata Extraction: Extracts key DICOM tags and stores them in a structured PostgreSQL database for fast querying.
+## Project Structure
 
-🛠️ Tech Stack
-Language: Python 3.10+
-
-Imaging Libraries: pydicom, Nibabel, dcm2niix
-
-Storage/Database: PostgreSQL, AWS S3 / Google Cloud Storage
-
-Orchestration: Docker / Kubernetes / Apache Airflow
-
-Project Structure
+```text
 brain-scan-ingestion/
 ├── config/             # Configuration files and DICOM tag lists
 ├── src/
@@ -31,3 +30,4 @@ brain-scan-ingestion/
 ├── tests/              # Unit and integration tests
 ├── Dockerfile          # Containerization setup
 └── requirements.txt    # Python dependencies
+```

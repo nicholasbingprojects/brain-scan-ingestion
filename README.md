@@ -21,3 +21,13 @@ Storage/Database: PostgreSQL, AWS S3 / Google Cloud Storage
 Orchestration: Docker / Kubernetes / Apache Airflow
 
 Project Structure
+brain-scan-ingestion/
+├── config/             # Configuration files and DICOM tag lists
+├── src/
+│   ├── anonymizer.py   # PHI removal scripts
+│   ├── converter.py    # DICOM to NIfTI conversion wrapper
+│   ├── validator.py    # Schema and integrity checks
+│   └── pipeline.py     # Main orchestration script
+├── tests/              # Unit and integration tests
+├── Dockerfile          # Containerization setup
+└── requirements.txt    # Python dependencies
